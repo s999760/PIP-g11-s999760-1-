@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 class zadanie1 {
     public static void main(String[] args) {
@@ -20,7 +21,7 @@ class zadanie1 {
 class zadanie4 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int liczba1, liczba2, wybor;
+        int liczba1, liczba2, wybor, wynik, wynik2;
         System.out.println("Wprowadz pierwsza liczbe");
         liczba1 = scan.nextInt();
         System.out.println("Wprowadz druga liczbe");
@@ -35,41 +36,58 @@ class zadanie4 {
 
         switch (wybor){
             case 1:
-                add(liczba1, liczba2);
-                System.out.println(add(liczba1, liczba2));
+                wynik = add(liczba1, liczba2);
+                wynik2 = AbsoluteValue(wynik);
+                System.out.println("Wynik:" + " " + wynik);
+                System.out.println("Wartosc bezwzgledna:" + " " + wynik2);
             break;
             case 2:
-                sub(liczba1, liczba2);
-                System.out.println(sub(liczba1, liczba2));
+                wynik = sub(liczba1, liczba2);
+                wynik2 = AbsoluteValue(wynik);
+                System.out.println("Wynik:" + " " + wynik);
+                System.out.println("Wartosc bezwzgledna:" + " " + wynik2);
             break;
             case 3:
-                mul(liczba1, liczba2);
-                System.out.println(mul(liczba1, liczba2));
+                wynik = mul(liczba1, liczba2);
+                wynik2 = AbsoluteValue(wynik);
+                System.out.println("Wynik:" + " " + wynik);
+                System.out.println("Wartosc bezwzgledna:" + " " + wynik2);
             break;
             case 4:
-                div(liczba1, liczba2);
-                System.out.println(div(liczba1, liczba2));
+                wynik = div(liczba1, liczba2);
+                wynik2 = AbsoluteValue(wynik);
+                System.out.println("Wynik:" + " " + wynik);
+                System.out.println("Wartosc bezwzgledna:" + " " + wynik2);
             break;
+            default:
+                System.out.println("Brak takiego dzialania");
         }
     }
 
     public static int add(int x, int y) {
-        int wynik = x + y;
-        return wynik;
+        int suma = x + y;
+        return suma;
     }
 
     public static int sub(int x, int y) {
-        int wynik = x - y;
-        return wynik;
+        int roznica = x - y;
+        return roznica;
     }
 
     public static int mul(int x, int y) {
-        int wynik = x * y;
-        return wynik;
+        int iloczyn = x * y;
+        return iloczyn;
     }
 
     public static int div(int x, int y) {
-        int wynik = x / y;
-        return wynik;
+        int iloraz = x / y;
+        return iloraz;
+    }
+
+    public static int AbsoluteValue(int z) {
+        int wartoscbezwzgledna = Math.abs(z);
+        return wartoscbezwzgledna;
+
     }
 }
+
