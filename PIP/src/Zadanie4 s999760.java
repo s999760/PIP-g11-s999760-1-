@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -91,3 +92,60 @@ class zadanie4 {
     }
 }
 
+class zadanie6 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double a, b;
+        System.out.println("Wprowadz pierwsza liczbe");
+        a = scan.nextDouble();
+        System.out.println("Wprowadz druga liczbe");
+        b = scan.nextDouble();
+
+        if (a > b) {
+            double c = a;
+            a = b;
+            b = c;
+            System.out.println(a);
+            System.out.println(b);
+
+        }
+
+        System.out.println("Wybrany przedzial" + " [" + a + ", " + b + "]");
+
+        System.out.println("Wartosci generowane losowo");
+        Random random = new Random();
+        double random1 = Math.random() * (a - b) + b;
+        double random2 = Math.random() * (a - b) + b;
+        double random3 = Math.random() * (a - b) + b;
+
+
+        System.out.println(random1);
+        System.out.println(random2);
+        System.out.println(random3);
+
+        double miejsce1, miejsce2, miejsce3;
+
+        if (random1 < random2) {
+            miejsce1 = random1;
+            miejsce2 = random2;
+        } else {
+            miejsce1 = random2;
+            miejsce2 = random1;
+        }
+
+        if (random3 < miejsce1) {
+            miejsce3 = miejsce2;
+            miejsce2 = miejsce1;
+            miejsce1 = random3;
+        } else if (random3 < miejsce2) {
+            miejsce3 = miejsce2;
+            miejsce2 = random3;
+        } else {
+            miejsce3 = random3;
+        }
+
+        System.out.println("Gdzie: " + miejsce1 + " < " + miejsce2 + " < " + miejsce3);
+
+    }
+
+}
