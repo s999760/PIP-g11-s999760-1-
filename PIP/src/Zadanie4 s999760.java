@@ -14,3 +14,10 @@ class zadanie1 {
         }
     }
 }
+
+class zadanie4 {
+    public static void main(String[] args) {
+
+
+    }
+}
