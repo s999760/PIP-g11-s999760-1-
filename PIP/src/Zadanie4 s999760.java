@@ -149,3 +149,37 @@ class zadanie6 {
     }
 
 }
+
+class zadanie8 {
+
+    public static void main(String[] args){
+
+        System.out.println("Witamy w kantorze!");
+
+        Scanner scan = new Scanner(System.in);
+        int waluta;
+        System.out.println("Wybierz walute");
+        System.out.println("1 - PLN");
+        System.out.println("2 - JPY");
+        waluta = scan.nextInt();
+
+        while (waluta != 1 && waluta != 2){
+            System.out.println("Wybierz PLN albo JPY");
+            waluta = scan.nextInt();
+        }
+
+        System.out.println("Wprowadz kwote");
+        int kwota;
+        kwota = scan.nextInt();
+        double kurs = 30.24;
+
+        if (waluta == 1){
+           System.out.println(kwota * kurs);
+        }
+
+        if (waluta == 2){
+            System.out.println(kwota / kurs);
+        }
+
+    }
+}
